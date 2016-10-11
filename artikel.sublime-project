@@ -1,45 +1,4 @@
 {
-	"build_systems":
-	[
-		{
-			"name": "Make all CV:s",
-			"shell_cmd": "make -j"
-		},
-		{
-			"name": "Build all CV:s",
-			"shell_cmd": "make -j -B"
-		},
-		{
-			"cmd":
-			[
-				"pandoc",
-				"-f",
-				"markdown",
-				"-o",
-				"$file_base_name.pdf",
-				"-H",
-				"header.tex",
-				"--latex-engine=xelatex",
-				"$file"
-			],
-			"name": "CV to PDF (pandoc)"
-		},
-		{
-			"cmd":
-			[
-				"pandoc",
-				"--from=markdown",
-				"--to=html",
-				"--output=$file_base_name.html",
-				"--standalone",
-				"--smart",
-				"--css=templates/pandoc-cv.css",
-				"--include-in-header=templates/header.html",
-				"$file"
-			],
-			"name": "CV to HTML (pandoc)"
-		}
-	],
 	"folders":
 	[
 		{
