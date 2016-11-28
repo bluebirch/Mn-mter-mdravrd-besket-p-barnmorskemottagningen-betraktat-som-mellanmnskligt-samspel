@@ -10,15 +10,21 @@ from panflute import *
 
 def action(elem, doc):
     if isinstance(elem, RawInline) and elem.format == 'tex':
-        m = re.match( r'\\cite([tp]?)\{(.*?)\}', elem.text )
+        m = re.match( r'\\cite([tp]?)(?:\[(.*?)\](?:\[(.*?)\])?)?\{(.*?)\}', elem.text )
         if m:
-            keys = re.split( r'[, ]+', m.group(2))
+            keys = re.split( r'[, ]+', m.group(4))
             citationtype = m.group(1)
+            prefix = m.group(2)
+            suffix = m.group(3)
             citations = list()
             for key in keys:
                 citation = Citation( key )
                 if citationtype == 't':
                     citation.mode = 'AuthorInText'
+                if prefix:
+                    citation.prefix = [ Str( prefix ) ]
+                if suffix:
+                    citation.suffix = [ Str( suffix ) ]
                 citations.append( citation )
             return Cite( Str('bogus'), citations=citations )
 
