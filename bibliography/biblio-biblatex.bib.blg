@@ -1,0 +1,13 @@
+[0] Config.pm:343> INFO - This is Biber 2.5 running in TOOL mode
+[0] Config.pm:345> INFO - Config file is 'biblatex-to-bibtex.conf'
+[0] Config.pm:346> INFO - Logfile is 'biblio-biblatex.bib.blg'
+[33] biber:290> INFO - === ons okt 12, 2016, 10:29:04
+[55] Biber.pm:3653> INFO - Looking for bibtex format file 'biblio-biblatex.bib'
+[56] bibtex.pm:1187> INFO - Decoding LaTeX character macros into UTF-8
+[57] bibtex.pm:1048> INFO - Found BibTeX data source 'biblio-biblatex.bib'
+[79] UCollate.pm:66> INFO - Overriding locale 'en_US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[79] UCollate.pm:66> INFO - Overriding locale 'en_US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[79] Biber.pm:3306> INFO - Sorting list 'none/global/' of type 'entry' with scheme 'none' and locale 'en_US'
+[79] Biber.pm:3310> INFO - No sort tailoring available for locale 'en_US'
+[86] bibtex.pm:196> INFO - Writing 'biblio.bib' with encoding 'UTF-8'
+[87] bibtex.pm:217> INFO - Output to biblio.bib

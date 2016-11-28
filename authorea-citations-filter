@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+
+"""
+Convert LaTeX inline \cite commands to pandoc citations.
+"""
+
+import sys
+import re
+from panflute import *
+
+def action(elem, doc):
+    if isinstance(elem, RawInline) and elem.format == 'tex':
+        m = re.match( r'\\cite([tp]?)\{(.*?)\}', elem.text )
+        if m:
+            keys = re.split( r'[, ]+', m.group(2))
+            citationtype = m.group(1)
+            citations = list()
+            for key in keys:
+                citation = Citation( key )
+                if citationtype == 't':
+                    citation.mode = 'AuthorInText'
+                citations.append( citation )
+            return Cite( Str('bogus'), citations=citations )
+
+
+if __name__ == '__main__':
+    run_filter(action)
