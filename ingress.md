@@ -1,2 +1,0 @@
-*Med den här artikeln vill jag visa hur ett betraktande av mötet mellan de blivande föräldrarna och mödrahälsovårdens professionella som ett mellanmänskligt möte kan bidra till en förståelse av blivande pappors upplevelser av att vara osynliga och utanför i detta möte. Jag använder besöket på barnmorskemottagningen som utgångspunkt för mitt resonemang, men det kan överföras också till ultraljudsundersökningen, förlossningen, vistelsen på BB och så vidare.*
-
