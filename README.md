@@ -56,3 +56,16 @@ Authorea uses plain BibTeX for references online, but [pandoc-citeproc](https://
 biber --tool --configfile=biblatex-to-bibtex.conf --output-resolve \
       --output-file=biblio.bib biblio-biblatex.bib
 ```
+
+## Building with `make`
+
+Authorea stores the document layout in `layout.md`. Adding some metadata in `meta.yaml`, this can be used to run Pandoc from an GNU make pattern rule:
+
+```make
+fulltext.%: meta.yaml $(shell cat layout.md) refs.md
+    pandoc -f markdown -o $@ -F ./authorea-citations-filter --bibliography \
+    bibliography/biblio-biblatex.bib --smart --self-contained \
+    --latex-engine=xelatex $+
+```
+
+(The file `refs.md` contains only the section title `## References`; Authorea adds this automatically, whereas `pandoc-citeproc` does not.)
